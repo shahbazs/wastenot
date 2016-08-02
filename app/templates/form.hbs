@@ -1,8 +1,8 @@
 <h1 align="middle"> Sign Up For More Info </h1>
 
 <h2 align="middle"> Contact Details </h2>
-<!--here starts the form-->
-<form autocomplete="off" method="get" action=/thanks>
+<!--here starts the contact deatails form-->
+<form autocomplete="off" method="get">
 <table style="width:80%">
   <tr>
     <th>First Name</th>
@@ -41,5 +41,20 @@
     <th><input type="text" id="phone" value=""><br></th>
   </tr>
 </table>
-  <p align="middle"><input type="submit" id="Submit"></p>
 </form>
+<!--This will take the client to a thank you page-->
+<table style="width:80%">
+  <tr>
+    <th>
+      <form action="/thanks">
+        <button>Submit</button>
+      </form>
+<!--This will take the client to enter more information page-->
+    </th>
+    <th>
+      <form action="/details">
+        <button>Get Composting ASAP</button>
+      </form>
+    </th>
+  </tr>
+</table>
