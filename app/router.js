@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('form');
   this.route('services');
   this.route('take');
+  this.route('thanks');
 });
 
 export default Router;
