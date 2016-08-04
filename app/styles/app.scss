@@ -1,0 +1,25 @@
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
+
+// Materialize styles
+@import "variables";
+@import "materialize";
+
+header {}
+
+
+body {
+  background-image: url("images/wastenot_logo.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 50px;
+}
+
+.background-white {
+  @extend .white;
+}
+
+.background-green {
+  @extend .green, .darken-1, .white-text;
+}
