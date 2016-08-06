@@ -1,9 +1,9 @@
-@import 'component/color';
+@import 'components/color';
 
 /* Colors */
 
-// $primary-color: color("materialize-green"), "lighten-2") !default;
-$primary-color: color("green") !default;
+// $primary-color: color("materialize-green", "lighten-2") !default;
+$primary-color: green !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
 $primary-color-dark: darken($primary-color, 15%) !default;
 
