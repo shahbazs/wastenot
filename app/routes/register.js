@@ -3,11 +3,11 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   actions: {
     doDetails() {
-      alert('Details attempted');
+      this.transitionTo('details');
     },
 
     doRegister() {
-      alert('Registration attempted');
+      this.transitionTo('thanks');
     }
   }
 });

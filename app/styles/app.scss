@@ -16,3 +16,8 @@ body {
 .background-green {
   @extend .green, .darken-1, .white-text;
 }
+
+.liquid-container {
+  transform: none;
+  -webkit-transform: none;
+}
