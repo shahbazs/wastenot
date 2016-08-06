@@ -5,14 +5,8 @@ $roboto-font-path: '../assets/';
 @import "variables";
 @import "materialize";
 
-header {}
-
 body {
-  background-image: url("images/wastenot_logo.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  padding: 50px;
+  background-color: $background-color;
 }
 
 .background-white {
