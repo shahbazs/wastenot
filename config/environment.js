@@ -16,7 +16,9 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    apiHost: 'http://localhost:4000'
   };
 
   if (environment === 'development') {
@@ -39,7 +41,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.apiHost = 'http://api.wastenotcompost.com';
   }
 
   return ENV;
