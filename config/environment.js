@@ -18,7 +18,9 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    apiHost: 'http://localhost:4000'
+    DS: {
+      host: 'http://localhost:4000'
+    }
   };
 
   if (environment === 'development') {
@@ -41,7 +43,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.apiHost = 'http://api.wastenotcompost.com';
+    ENV.DS.host = 'http://api.wastenotcompost.com';
   }
 
   return ENV;
