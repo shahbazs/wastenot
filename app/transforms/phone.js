@@ -6,6 +6,8 @@ export default DS.Transform.extend({
   },
 
   serialize(deserialized) {
-    return deserialized.replace(/\D/g, "");
+    if (deserialized && deserialized.replace) {
+      return deserialized.replace(/\D/g, "");
+    }
   }
 });
