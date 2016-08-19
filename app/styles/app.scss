@@ -12,6 +12,10 @@ body {
 
 nav {
   @extend .brown, .darken-2;
+
+  ul a.active {
+    @extend .brown, .lighten-2;
+  }
 }
 
 .background-white {
