@@ -22,3 +22,15 @@ body {
   transform: none;
   -webkit-transform: none;
 }
+
+.page-footer {
+  @extend .green, .lighten-2;
+
+  .footer-copyright {
+    @extend .brown, .darken-2;
+  }
+
+  .footer-social a {
+    @extend .blue-text, .text-darken-4;
+  }
+}

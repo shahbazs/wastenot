@@ -1,17 +1,10 @@
-{{#wn-nav title="WasteNot" as |n|}}
-  {{#n.desktop-menu}}
-    {{#n.link-to 'home'}}Home{{/n.link-to}}
-    {{#n.link-to 'about'}}About{{/n.link-to}}
-    {{#n.link-to 'services'}}Services{{/n.link-to}}
-    {{#n.link-to 'register'}}Sign up{{/n.link-to}}
-  {{/n.desktop-menu}}
-
-  {{#n.side-nav}}
-    {{#n.link-to 'home'}}Home{{/n.link-to}}
-    {{#n.link-to 'about'}}About{{/n.link-to}}
-    {{#n.link-to 'services'}}Services{{/n.link-to}}
-    {{#n.link-to 'register'}}Sign up{{/n.link-to}}
-  {{/n.side-nav}}
-{{/wn-nav}}
+{{#md-navbar name="WasteNot" homeRoute='home'}}
+  {{li-link target='home' text='Home'}}
+  {{li-link target='about' text='About'}}
+  {{li-link target='services' text='Services'}}
+  {{li-link target='register' text='Sign Up'}}
+{{/md-navbar}}
 
 {{liquid-outlet}}
+
+{{wn-footer}}

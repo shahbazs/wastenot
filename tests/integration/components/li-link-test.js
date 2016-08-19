@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('nav-link', 'Integration | Component | nav link', {
+moduleForComponent('li-link', 'Integration | Component | li link', {
   integration: true
 });
 
@@ -9,15 +9,15 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{nav-link 'index'}}`);
+  this.render(hbs`{{li-link}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#nav-link 'index'}}
+    {{#li-link}}
       template block text
-    {{/nav-link}}
+    {{/li-link}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
