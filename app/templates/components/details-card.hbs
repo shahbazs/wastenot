@@ -2,9 +2,11 @@
   onsubmit=attrs.onsubmit
   buttonText='Submit'}}
   <div class="row">
-    {{wn-input
-      classNames='col s12'
-      label='What is your service type?'}}
+    <h6>What is your service type?</h6>
+    {{#wn-dropdown title="Choose One"}}
+      <li><a href="#!">Residential</a></li>
+      <li><a href="#!">Commercial</a></li>
+    {{/wn-dropdown}}
   </div>
 
   <div class="row">

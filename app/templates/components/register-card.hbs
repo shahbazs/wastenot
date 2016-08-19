@@ -7,43 +7,64 @@
   <div class="row">
     {{wn-input
       classNames='col s12 m6'
-      label='First Name'}}
+      label='First Name'
+      value=user.firstName
+    }}
     {{wn-input
       classNames='col s12 m6'
-      label='Last Name'}}
+      label='Last Name'
+      value=user.lastName
+    }}
   </div>
 
   <div class="row">
     {{wn-input
       classNames='col s12 m4'
-      label='House number'}}
+      label='House number'
+      value=user.address.house
+    }}
     {{wn-input
       classNames='col s12 m4'
-      label='Street'}}
+      label='Street'
+      value=user.address.street
+    }}
     {{wn-input
       classNames='col s12 m4'
-      label='Apt/Suite'}}
+      label='Apt/Suite'
+      value=user.address.apt
+    }}
   </div>
 
   <div class="row">
     {{wn-input
       classNames='col s12 m4'
-      label='City'}}
+      label='City'
+      value=user.address.city
+    }}
     {{wn-input
       classNames='col s12 m4'
-      label='State'}}
+      label='State'
+      value=user.address.state
+    }}
     {{wn-input
       classNames='col s12 m4'
-      label='Zip'}}
+      label='Zip'
+      value=user.address.zip
+    }}
   </div>
 
   <div class="row">
     {{wn-input
       classNames='col s12 m6'
       type='email'
-      label='Email Address'}}
+      label='Email Address'
+      value=user.email
+    }}
     {{wn-input
       classNames='col s12 m6'
-      label='Phone'}}
+      type="tel"
+      label='Phone'
+      value=user.phone
+    }}
   </div>
 {{/wn-card}}
