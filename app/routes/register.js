@@ -11,7 +11,10 @@ export default Ember.Route.extend({
 
   actions: {
     doDetails() {
-      this.transitionTo('details');
+      this.get('currentModel').save()
+      .then((user) => {
+        this.transitionTo('details', user);
+      });
     },
 
     doRegister() {
