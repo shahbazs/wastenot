@@ -10,6 +10,10 @@ body {
   padding: 15px;
 }
 
+nav {
+  @extend .brown, .darken-2;
+}
+
 .background-white {
   @extend .white;
 }
@@ -19,6 +23,7 @@ body {
 }
 
 .liquid-container {
+  padding: 1rem;
   transform: none;
   -webkit-transform: none;
 }
@@ -33,4 +38,8 @@ body {
   .footer-social a {
     @extend .blue-text, .text-darken-4;
   }
+}
+
+.sign-up {
+  @extend .amber, .darken-1, .black-text;
 }
