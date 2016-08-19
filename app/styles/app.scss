@@ -43,3 +43,15 @@ nav {
 .sign-up {
   @extend .amber, .darken-1, .black-text;
 }
+
+.submit-button, .details-button {
+  margin: 2px;
+}
+
+.submit-button {
+  @extend .purple;
+}
+
+.details-button {
+  @extend .deep-orange;
+}
