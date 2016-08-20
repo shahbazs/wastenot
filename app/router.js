@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('home', { path: '/' });
 
   this.route('about');
-  this.route('details');
+  this.route('details', { path: '/details/:user_id' });
   this.route('form');
   this.route('register');
   this.route('services');

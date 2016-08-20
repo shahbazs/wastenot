@@ -10,6 +10,14 @@ body {
   padding: 15px;
 }
 
+nav {
+  @extend .brown, .darken-2;
+
+  ul a.active {
+    @extend .brown, .lighten-2;
+  }
+}
+
 .background-white {
   @extend .white;
 }
@@ -19,6 +27,35 @@ body {
 }
 
 .liquid-container {
+  padding: 1rem;
   transform: none;
   -webkit-transform: none;
+}
+
+.page-footer {
+  @extend .green, .lighten-2;
+
+  .footer-copyright {
+    @extend .brown, .darken-2;
+  }
+
+  .footer-social a {
+    @extend .blue-text, .text-darken-4;
+  }
+}
+
+.sign-up {
+  @extend .amber, .darken-1, .black-text;
+}
+
+.submit-button, .details-button {
+  margin: 2px;
+}
+
+.submit-button {
+  @extend .purple;
+}
+
+.details-button {
+  @extend .deep-orange;
 }
