@@ -7,65 +7,33 @@
             class='col s12 m6'
             label='First Name'
             value=model.firstName
+            validate=true
           }}
           {{md-input
             class='col s12 m6'
             label='Last Name'
             value=model.lastName
+            validate=true
           }}
         </div>
 
         <div class="row">
           {{md-input
-            class='col s12 m6'
+            class='col s12'
             type='email'
             label='Email Address'
             value=model.email
-          }}
-          {{md-input
-            class='col s12 m6'
-            type="tel"
-            label='Phone'
-            value=model.phone
-          }}
-        </div>
-<!--
-        <div class="row">
-          {{md-input
-            class='col s12 m4'
-            label='House number'
-            value=model.address.house
-          }}
-          {{md-input
-            class='col s12 m4'
-            label='Street'
-            value=model.address.street
-          }}
-          {{md-input
-            class='col s12 m4'
-            label='Apt/Suite'
-            value=model.address.apt
+            validate=true
           }}
         </div>
 
         <div class="row">
-          {{md-input
-            class='col s12 m4'
-            label='City'
-            value=model.address.city
-          }}
-          {{md-input
-            class='col s12 m4'
-            label='State'
-            value=model.address.state
-          }}
-          {{md-input
-            class='col s12 m4'
-            label='Zip'
-            value=model.address.zip
-          }}
-        </div>
--->
+          <h6>What is your Service Type?</h6>
+          {{#md-radios selection = model.details.serviceType}}
+            <p>{{md-radio value='residential' name="Residential"}}</p>
+            <p>{{md-radio value='commercial' name="Commercial"}}</p>
+          {{/md-radios}}
+          </div>
       {{/md-card-content}}
 
       <div class="center-align">
