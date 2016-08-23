@@ -2,7 +2,7 @@
   "name": "wastenot",
   "dependencies": {
     "ember": "~2.7.0",
-    "ember-cli-shims": "0.1.1",
+    "ember-cli-shims": "~0.1.1",
     "ember-qunit-notifications": "0.1.0",
     "font-awesome": "^4.6.3",
     "materialize": "0.97.7"

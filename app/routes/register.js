@@ -4,8 +4,9 @@ export default Ember.Route.extend({
   model() {
     let user = this.store.createRecord('user');
     let address = Ember.Object.create();
+    let details = Ember.Object.create();
 
-    user.set('address', address);
+    user.setProperties({ address, details });
     return user;
   },
 
@@ -14,6 +15,9 @@ export default Ember.Route.extend({
       this.get('currentModel').save()
       .then((user) => {
         this.transitionTo('details', user);
+      })
+      .catch((err) => {
+        console.warn({ err });
       });
     },
 
@@ -21,6 +25,9 @@ export default Ember.Route.extend({
       this.get('currentModel').save()
       .then(() => {
         this.transitionTo('thanks');
+      })
+      .catch((err) => {
+        console.warn({ err });
       });
     }
   }
