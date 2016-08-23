@@ -30,8 +30,12 @@
         <div class="row">
           <h6>What is your Service Type?</h6>
           {{#md-radios selection = model.details.serviceType}}
-            <p>{{md-radio value='residential' name="Residential"}}</p>
-            <p>{{md-radio value='commercial' name="Commercial"}}</p>
+            <div class="row">
+                <div>
+                    <th><p>{{md-radio value='residential' name="Residential"}}</p></th>
+                    <th><p>{{md-radio value='commercial' name="Commercial"}}</p></th>
+                </div>
+            </div>
           {{/md-radios}}
           </div>
       {{/md-card-content}}
