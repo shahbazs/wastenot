@@ -1,14 +1,42 @@
-<h3>Home</h3>
-
 <div class="center-align">
-  <img alt="WasteNot Logo"
-       class="responsive-img"
-       src="assets/images/wastenot_logo.jpg">
+  <div class="row">
+    <div class="col s12 m6">
+      {{#md-card title="Step 1:"}}
+        {{#md-card-content}}
+          You sign up and we drop off a clean bucket with a fresh compostable liner and lid.
+        {{/md-card-content}}
+      {{/md-card}}
+    </div>
+    <div class="col s6 m6">
+      {{#md-card title="Step 2:"}}
+        {{#md-card-content}}
+          You fill that bucket with compostable waste such as your food scraps, certified compostable serviceware, and other organic materials.
+        {{/md-card-content}}
+      {{/md-card}}
+    </div>
+    <div class="col s6 m6">
+      {{#md-card title="step 3:"}}
+        {{#md-card-content}}
+          You leave the bucket out on pickup-day and we replace it with a cleaned bucket, fresh liner, and lid.
+        {{/md-card-content}}
+      {{/md-card}}
+    </div>
+    <div class="col s6 m6">
+      {{#md-card title="step 4:"}}
+        {{#md-card-content}}
+          Your waste is transformed into premium, locally-sourced, black gold, otherwise known as compost.
+        {{/md-card-content}}
+      {{/md-card}}
+    </div>
+    <div class="col s6">
+      {{#md-card title="step 5:"}}
+      {{#md-card-content}}
+        The compost gets distributed to community gardens, urban agriculture, or back to you.
+      {{/md-card-content}}
+      {{/md-card}}
+    </div>
+  </div>
 </div>
-
-<h4 class="center-align">
-  Chicago’s ﬁrst zero-emissions compost collection service for home & business.
-</h4>
 
 <div class="center-align">
   {{#link-to 'register'}}
