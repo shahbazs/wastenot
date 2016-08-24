@@ -1,0 +1,45 @@
+<h3>Home</h3>
+
+<div class="center-align">
+  <img alt="WasteNot Logo"
+       class="responsive-img"
+       src="assets/images/wastenot_logo.jpg">
+</div>
+
+<h4 class="center-align">
+  Chicago’s ﬁrst zero-emissions compost collection service for home & business.
+</h4>
+
+<table>
+    <tr>
+      <th>Step 1:</th>
+      <th>Step 2:</th>
+      <th>Step 3:</th>
+      <th>Step 4:</th>
+      <th>Step 5:</th>
+    </tr>
+    <tr>
+      <td>You sign up and we drop off a clean bucket with a fresh compostable liner and lid. </td>
+      <td>You fill that bucket with compostable waste such as your food scraps, certified compostable serviceware, and other organic materials.</td>
+      <td>You leave the bucket out on pickup-day and we replace it with a cleaned bucket, fresh liner, and lid.</td>
+      <td>Your waste is transformed into premium, locally-sourced, black gold, otherwise known as compost.</td>
+      <td>The compost gets distributed to community gardens, urban agriculture, or back to you.</td>
+    </tr>
+    <tr><td> &nbsp; </td></tr>
+    <tr>
+      <td><img alt="Bucket" class="circle responsive-img" src="assets/images/step_1.png"></td>
+      <td><img alt="Bucket" class="circle responsive-img" src="assets/images/step_2.png"></td>
+      <td><img alt="Bucket" class="circle responsive-img" src="assets/images/step_3.png"></td>
+      <td><img alt="Bucket" class="circle responsive-img" src="assets/images/step_4.jpg"></td>
+      <td><img alt="Bucket" class="circle responsive-img" src="assets/images/step_5_1.png"></td>
+    </tr>
+</table>
+
+<div class="center-align">
+  {{#link-to 'register'}}
+    {{md-btn text='Sign Up'
+      buttonType='large'
+      class='sign-up'
+    }}
+  {{/link-to}}
+</div>
