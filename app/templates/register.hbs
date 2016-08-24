@@ -6,30 +6,30 @@
           {{md-input
             class='col s12 m6'
             label='First Name'
+            required=true
             value=model.firstName
-            validate=true
           }}
           {{md-input
             class='col s12 m6'
             label='Last Name'
             value=model.lastName
-            validate=true
           }}
         </div>
 
         <div class="row">
           {{md-input
             class='col s12'
-            type='email'
             label='Email Address'
-            value=model.email
+            required=true
+            type='email'
             validate=true
+            value=model.email
           }}
         </div>
 
         <div class="row">
           <h6>What is your Service Type?</h6>
-          {{#md-radios selection = model.details.serviceType}}
+          {{#md-radios selection = model.serviceType}}
             <div class="row">
                 <div>
                     <th><p>{{md-radio value='residential' name="Residential"}}</p></th>

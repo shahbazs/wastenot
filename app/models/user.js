@@ -6,5 +6,6 @@ export default DS.Model.extend({
   email: DS.attr(),
   firstName: DS.attr(),
   lastName: DS.attr(),
-  phone: DS.attr('phone')
+  phone: DS.attr('phone'),
+  serviceType: DS.attr()
 });

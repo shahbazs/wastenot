@@ -19,7 +19,6 @@ Router.map(function() {
   this.route('auth', function() {
     this.route('login');
   });
-  this.route('thanks-business');
 });
 
 export default Router;

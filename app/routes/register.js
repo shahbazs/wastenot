@@ -2,22 +2,30 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    let user = this.store.createRecord('user');
-    let address = Ember.Object.create();
-    let details = Ember.Object.create();
-
-    user.setProperties({ address, details });
-    return user;
+    // residential by default
+    return this.store.createRecord('user', {
+      serviceType: 'residential'
+    });
   },
 
   actions: {
     doDetails() {
-      this.get('currentModel').save()
+      let model = this.get('currentModel');
+      let serviceType = model.get('serviceType');
+      console.debug({ serviceType });
+
+      model.save()
       .then((user) => {
-        this.transitionTo('details', user);
+        if (serviceType === 'commercial') {
+          this.transitionTo('thanks');
+        } else {
+          this.transitionTo('details', user);
+        }
       })
       .catch((err) => {
         console.warn({ err });
+        let errors = model.get('errors');
+        console.warn({ errors });
       });
     },
 
@@ -28,6 +36,8 @@ export default Ember.Route.extend({
       })
       .catch((err) => {
         console.warn({ err });
+        let errors = this.get('currentModel.errors');
+        console.warn({ errors });
       });
     }
   }
