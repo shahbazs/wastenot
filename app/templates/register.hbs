@@ -4,53 +4,53 @@
       {{#md-card-content}}
         <div class="row">
           {{md-input
-            class='col s12 m6'
-            label='First Name'
-            required=true
-            value=model.firstName
+            class    = 'col s12 m6'
+            label    = 'First Name'
+            required = true
+            value    = model.firstName
           }}
           {{md-input
-            class='col s12 m6'
-            label='Last Name'
-            value=model.lastName
+            class = 'col s12 m6'
+            label = 'Last Name'
+            value = model.lastName
           }}
         </div>
 
         <div class="row">
           {{md-input
-            class='col s12'
-            label='Email Address'
-            required=true
-            type='email'
-            validate=true
-            value=model.email
+            class    = 'col s12'
+            label    = 'Email Address'
+            required = true
+            type     = 'email'
+            validate = true
+            value    = model.email
           }}
         </div>
 
         <div class="row">
           <h6>What is your Service Type?</h6>
-          {{#md-radios selection = model.serviceType}}
+          {{#md-radios selection=model.serviceType}}
             <div class="row">
-                <div>
-                    <th><p>{{md-radio value='residential' name="Residential"}}</p></th>
-                    <th><p>{{md-radio value='commercial' name="Commercial"}}</p></th>
-                </div>
+              <div>
+                <p>{{md-radio value='residential' name="Residential"}}</p>
+                <p>{{md-radio value='commercial' name="Commercial"}}</p>
+              </div>
             </div>
           {{/md-radios}}
-          </div>
+        </div>
       {{/md-card-content}}
 
       <div class="center-align">
         {{md-btn-submit
-          action='doRegister'
-          class='submit-button'
-          text='Submit'
+          action = 'doRegister'
+          class  = 'submit-button'
+          text   = 'Submit'
         }}
 
         {{md-btn-submit
-          action='doDetails'
-          class='details-button'
-          text='Get Composting ASAP'
+          action = 'doDetails'
+          class  = 'details-button'
+          text   = 'Get Composting ASAP'
         }}
       </div>
     {{/md-card}}

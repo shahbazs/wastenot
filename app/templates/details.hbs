@@ -1,66 +1,80 @@
 <div class='row'>
   <div class='col s12 m8 offset-m2'>
-    {{#md-card title='Service Details'}}
+    {{#md-card title='Resident Details'}}
       {{#md-card-content}}
         <div class='row'>
           {{md-input
-            class='col s12 m6'
-            type='tel'
-            label='Phone'
-            value=model.phone
-            validate=true
+            class    = 'col s12'
+            type     = 'tel'
+            label    = 'Phone'
+            value    = model.phone
           }}
         </div>
 
         <div class='row'>
           {{md-input
-            class='col s12 m4'
-            label='House number'
-            value=model.address.house
-            validate=true
+            class    = 'col s12 m6'
+            label    = 'House number'
+            value    = model.address.house
           }}
           {{md-input
-            class='col s12 m4'
-            label='Street'
-            value=model.address.street
-            validate=true
+            class    = 'col s12 m6'
+            label    = 'Street'
+            value    = model.address.street
           }}
           {{md-input
-            class='col s12 m4'
-            label='Apt number'
-            value=model.address.apt
-            validate=true
+            class    = 'col s12 m6 offset-m6'
+            label    = 'Apt/Suite'
+            value    = model.address.apt
           }}
         </div>
 
         <div class='row'>
           {{md-input
-            class='col s12 m4'
-            label='City'
-            value=model.address.city
-            validate=true
+            class    = 'col s12'
+            label    = 'City'
+            value    = model.address.city
           }}
           {{md-input
-            class='col s12 m4'
-            label='State'
-            value=model.address.state
-            validate=true
+            class    = 'col s12 m6'
+            label    = 'State'
+            value    = model.address.state
           }}
           {{md-input
-            class='col s12 m4'
-            label='Zip'
-            value=model.address.zip
-            validate=true
+            class    = 'col s12 m6'
+            label    = 'Zip'
+            value    = model.address.zip
           }}
+        </div>
+
+        <div class='row'>
+          <div class='col s12 m6'>
+            <h6>Type of Residence</h6>
+            {{md-checks
+              content         = residenceTypes
+              optionLabelPath = 'name'
+              optionValuePath = 'value'
+              selection       = model.details.residenceTypes
+            }}
+          </div>
+
+          <div class='col s12 m6'>
+            <h6>Payment Method</h6>
+            {{#md-radios
+              selection=model.details.paymentMethod}}
+              <p>{{md-radio value='cash' name='Cash'}}</p>
+              <p>{{md-radio value='check' name='Check'}}</p>
+            {{/md-radios}}
+          </div>
         </div>
 
       {{/md-card-content}}
 
       <div class='center-align'>
         {{md-btn-submit
-          action='doSubmit'
-          class='submit-button'
-          text='Submit'
+          action = 'doSubmit'
+          class  = 'submit-button'
+          text   = 'Submit'
         }}
       </div>
     {{/md-card}}

@@ -12,9 +12,10 @@ export default Ember.Route.extend({
     doDetails() {
       let model = this.get('currentModel');
       let serviceType = model.get('serviceType');
-      console.debug({ serviceType });
 
-      model.save()
+      model.save({
+        adapterOptions: { action: 'register' }
+      })
       .then((user) => {
         if (serviceType === 'commercial') {
           this.transitionTo('thanks');
@@ -22,22 +23,24 @@ export default Ember.Route.extend({
           this.transitionTo('details', user);
         }
       })
+      // TODO: show validation errors in the form
       .catch((err) => {
-        console.warn({ err });
         let errors = model.get('errors');
-        console.warn({ errors });
+        console.warn({ err, errors });
       });
     },
 
     doRegister() {
-      this.get('currentModel').save()
+      this.get('currentModel').save({
+        adapterOptions: { action: 'register' }
+      })
       .then(() => {
         this.transitionTo('thanks');
       })
+      // TODO: show validation errors in the form
       .catch((err) => {
-        console.warn({ err });
         let errors = this.get('currentModel.errors');
-        console.warn({ errors });
+        console.warn({ err, errors });
       });
     }
   }
