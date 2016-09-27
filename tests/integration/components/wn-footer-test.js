@@ -1,5 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import textLines from 'wastenot/tests/utils/text-lines';
 
 moduleForComponent('wn-footer', 'Integration | Component | wn footer', {
   integration: true
@@ -11,7 +12,15 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{wn-footer}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  let expectedLines = [
+    'WASTENOT COMPOST',
+    'Ravenswood, Chicago',
+    '(773) 219-2995',
+    'liam@wastenotcompost.com',
+    '© 2016 Wastenot Compost   Website created by AlienCyborg'
+  ];
+
+  assert.deepEqual(textLines(this.$()), expectedLines);
 
   // Template block usage:
   this.render(hbs`
@@ -20,5 +29,5 @@ test('it renders', function(assert) {
     {{/wn-footer}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.deepEqual(textLines(this.$()), expectedLines);
 });
