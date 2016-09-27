@@ -1,10 +1,14 @@
+// jscs:disable requireCamelCaseOrUpperCaseIdentifiers
+
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+const { Object: EmberObject, Route } = Ember;
+
+export default Route.extend({
   model(params) {
     let user = this.store.createRecord('user', { id: params.user_id });
-    let address = Ember.Object.create();
-    let details = Ember.Object.create({
+    let address = EmberObject.create();
+    let details = EmberObject.create({
       residenceTypes: []
     });
 
