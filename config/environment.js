@@ -1,3 +1,4 @@
+/* jscs:disable */
 /* jshint node: true */
 
 module.exports = function(environment) {
@@ -19,8 +20,7 @@ module.exports = function(environment) {
     },
 
     DS: {
-      host: 'http://localhost:4000'
-      // host: 'http://test-api.wastenotcompost.com'
+      host: process.env.API_HOST || 'http://localhost:4000'
     }
   };
 
@@ -44,7 +44,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.DS.host = 'http://api.wastenotcompost.com';
   }
 
   return ENV;

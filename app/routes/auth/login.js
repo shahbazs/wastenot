@@ -1,11 +1,19 @@
 import Ember from 'ember';
 
-const { Route } = Ember;
+const { Route, run } = Ember;
 
 export default Route.extend({
   actions: {
     doLogin() {
-      alert('login attempted');
+      run.debounce(this, 'login', 50);
     }
+  },
+
+  model() {
+    return { email: '', password: '' };
+  },
+
+  login() {
+    console.log('login');
   }
 });

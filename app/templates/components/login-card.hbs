@@ -1,0 +1,31 @@
+{{#md-card title='Login to WasteNot Compost'}}
+  {{#md-card-content}}
+    <div class='row'>
+      {{md-input
+        class    = 'col s12'
+        errors   = (v-get this 'model.email' 'messages')
+        label    = 'Username'
+        type     = 'email'
+        value    = model.email
+        validate = true
+      }}
+    </div>
+    <div class='row'>
+      {{md-input
+        class    = 'col s12'
+        errors   = (v-get this 'model.password' 'messages')
+        label    = 'Password'
+        type     = 'password'
+        value    = model.password
+        validate = true
+      }}
+    </div>
+    {{#md-card-action class='right-align'}}
+      {{md-btn-submit
+        action     = attrs.onsubmit
+        isDisabled = validations.messages.length
+        text       = buttonText
+      }}
+    {{/md-card-action}}
+  {{/md-card-content}}
+{{/md-card}}
