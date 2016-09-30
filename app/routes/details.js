@@ -2,7 +2,7 @@
 
 import Ember from 'ember';
 
-const { Object: EmberObject, Route } = Ember;
+const { Object: EmberObject, Route, run } = Ember;
 
 export default Route.extend({
   model(params) {
@@ -30,19 +30,21 @@ export default Route.extend({
 
   actions: {
     doSubmit() {
-      let model = this.get('currentModel');
-
-      model.save({
-        adapterOptions: { action: 'details' }
-      })
-      .then(() => {
-        this.transitionTo('thanks');
-      })
-      // TODO: show validation errors in the form
-      .catch((err) => {
-        let errors = model.get('errors');
-        console.warn({ err, errors });
-      });
+      run.debounce(this, '_submit', 50);
     }
+  },
+
+  _submit() {
+    this.get('currentModel').save({
+      adapterOptions: { action: 'details' }
+    })
+    .then(() => {
+      this.transitionTo('thanks');
+    })
+    // TODO: show validation errors in the form
+    .catch((err) => {
+      let errors = this.get('currentModel.errors');
+      console.warn({ err, errors });
+    });
   }
 });

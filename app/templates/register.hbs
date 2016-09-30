@@ -1,56 +1,11 @@
-<div class="row">
-  <div class="col s12 m8 offset-m2">
-    {{#md-card title="Sign Up for More Info"}}
-      {{#md-card-content}}
-        <div class="row">
-          {{md-input
-            class    = 'col s12 m6'
-            label    = 'First Name'
-            required = true
-            value    = model.firstName
-          }}
-          {{md-input
-            class = 'col s12 m6'
-            label = 'Last Name'
-            value = model.lastName
-          }}
-        </div>
-
-        <div class="row">
-          {{md-input
-            class    = 'col s12'
-            label    = 'Email Address'
-            required = true
-            type     = 'email'
-            validate = true
-            value    = model.email
-          }}
-        </div>
-
-        <div class="row">
-          <h6>What is your Service Type?</h6>
-          {{#md-radios selection=model.serviceType}}
-            <div class="row">
-              <div>
-                <p>{{md-radio value='residential' name="Residential"}}</p>
-                <p>{{md-radio value='commercial' name="Commercial"}}</p>
-              </div>
-            </div>
-          {{/md-radios}}
-        </div>
-      {{/md-card-content}}
-
-      <div class="center-align">
-        {{md-btn-submit
-          action = 'doRegister'
-          text   = 'Submit'
-        }}
-
-        {{md-btn-submit
-          action = 'doDetails'
-          text   = 'Get Composting ASAP'
-        }}
-      </div>
-    {{/md-card}}
+<div class="container">
+  <div class="row">
+    <div class="col s12 m8 offset-m2">
+      {{register-card
+        model     = model
+        onsubmit  = (route-action "doRegister")
+        ondetails = (route-action "doDetails")
+      }}
+    </div>
   </div>
 </div>

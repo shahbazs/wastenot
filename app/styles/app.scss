@@ -9,6 +9,10 @@ $roboto-font-path: '../assets/';
 body {
   background-color: $background-color;
   padding: 15px;
+
+  .row > .input-field {
+    margin: 1.5rem 0;
+  }
 }
 
 .liquid-container {

@@ -1,0 +1,59 @@
+{{#md-card title="Sign Up for More Info"}}
+  {{#md-card-content}}
+    <div class="row">
+      {{md-input
+        class    = "col s12 m6"
+        errors   = (v-get this "model.firstName" "messages")
+        label    = "First Name"
+        validate = true
+        value    = model.firstName
+      }}
+      {{md-input
+        class    = "col s12 m6"
+        errors   = (v-get this "model.lastName" "messages")
+        label    = "Last Name"
+        validate = true
+        value    = model.lastName
+      }}
+    </div>
+
+    <div class="row">
+      {{md-input
+        class    = "col s12"
+        errors   = (v-get this "model.email" "messages")
+        label    = "Email Address"
+        type     = "email"
+        validate = true
+        value    = model.email
+      }}
+    </div>
+
+    <div class="row">
+      <div class="col s8 offset-s1">
+        <h6>What is your Service Type?</h6>
+        {{#md-radios selection=model.serviceType}}
+          <div class="row">
+            <div>
+              <p>{{md-radio value="residential" name="Residential"}}</p>
+              <p>{{md-radio value="commercial" name="Commercial"}}</p>
+            </div>
+          </div>
+        {{/md-radios}}
+      </div>
+    </div>
+
+    {{#md-card-action class="center-align"}}
+      {{md-btn-submit
+        action     = attrs.onsubmit
+        isDisabled = validations.messages.length
+        text       = submitButtonText
+      }}
+
+      {{md-btn-submit
+        action     = attrs.ondetails
+        isDisabled = validations.messages.length
+        text       = detailsButtonText
+      }}
+    {{/md-card-action}}
+  {{/md-card-content}}
+{{/md-card}}
