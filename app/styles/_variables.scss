@@ -1,23 +1,10 @@
-@import 'components/color';
+@import "components/color";
 
+// Materialize Overrides
+$primary-color: color("green", "lighten-2");
+$secondary-color: color("deep-orange", "lighten-1");
+$link-color: color("blue", "darken-4");
+
+// Custom
 $background-color: color("brown", "lighten-3");
-
-/* Colors */
-
-$primary-color: green;
-$primary-color-light: lighten($primary-color, 15%);
-$primary-color-dark: darken($primary-color, 15%);
-
-$secondary-color: color("blue", "lighten-1");
-$success-color: color("green", "base");
-$error-color: color("red", "base");
-$link-color: color("light-blue", "darken-1");
-
-/* Collections */
-
-$collection-border-color: #e0e0e0;
-$collection-bg-color: #fff;
-$collection-active-bg-color: $secondary-color;
-$collection-active-color: lighten($secondary-color, 55%);
-$collection-hover-bg-color: #ddd;
-$collection-link-color: $secondary-color;
+$navbar-color: color("brown", "darken-2");

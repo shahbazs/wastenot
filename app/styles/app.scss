@@ -1,9 +1,8 @@
 // Fix for Roboto font path
 $roboto-font-path: '../assets/';
 
-// Materialize styles
-@import "components/variables";
 @import "variables";
+@import "components/variables";
 @import "materialize";
 @import "ember-cli-materialize";
 
@@ -12,52 +11,22 @@ body {
   padding: 15px;
 }
 
-nav {
-  @extend .brown, .darken-2;
-
-  ul a.active {
-    @extend .brown, .lighten-2;
-  }
-}
-
-.background-white {
-  @extend .white;
-}
-
-.background-green {
-  @extend .green, .darken-1, .white-text;
-}
-
 .liquid-container {
   padding: 1rem;
   transform: none;
   -webkit-transform: none;
 }
 
-.page-footer {
-  @extend .green, .lighten-2;
+nav {
+  background-color: $navbar-color;
+}
 
+footer.page-footer {
   .footer-copyright {
-    @extend .brown, .darken-2;
-  }
-
-  .footer-social a {
-    @extend .blue-text, .text-darken-4;
+    background-color: $navbar-color;
   }
 }
 
-.sign-up {
-  @extend .amber, .darken-1, .black-text;
-}
-
-.submit-button, .details-button {
-  margin: 2px;
-}
-
-.submit-button {
-  @extend .purple;
-}
-
-.details-button {
-  @extend .deep-orange;
+.btn {
+  color: $off-black;
 }
