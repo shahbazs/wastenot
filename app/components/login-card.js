@@ -1,12 +1,12 @@
 import Ember from 'ember';
-import { buildValidations } from 'ember-cli-validations';
-import { email, password } from 'wastenot/utils/admin-validations';
+import { buildValidations } from 'ember-cp-validations';
+import { email, required } from 'wastenot/utils/user-validations';
 
 const { Component } = Ember;
 
 const Validations = buildValidations({
   'model.email': email,
-  'model.password': password
+  'model.password': required
 });
 
 export default Component.extend(Validations, {

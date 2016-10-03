@@ -1,6 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
-import textLines from 'wastenot/tests/utils/text-lines';
+import textLines from 'wastenot/tests/helpers/text-lines';
 
 moduleForComponent('wn-footer', 'Integration | Component | wn footer', {
   integration: true
