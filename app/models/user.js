@@ -1,14 +1,16 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-  address: DS.attr('hash'),
-  email: DS.attr(),
-  firstName: DS.attr(),
-  lastName: DS.attr(),
-  phone: DS.attr('phone'),
-  serviceType: DS.attr(),
+const { Model, attr } = DS;
 
-  details: DS.attr('hash', {
+export default Model.extend({
+  address: attr('hash'),
+  email: attr(),
+  firstName: attr(),
+  lastName: attr(),
+  phone: attr('phone'),
+  serviceType: attr(),
+
+  details: attr('hash', {
     defaultValue: () => ({
       residenceTypes: []
     })

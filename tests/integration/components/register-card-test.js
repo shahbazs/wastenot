@@ -2,7 +2,7 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import textLines from 'wastenot/tests/helpers/text-lines';
 
-moduleForComponent('wn-footer', 'Integration | Component | wn footer', {
+moduleForComponent('register-card', 'Integration | Component | register card', {
   integration: true
 });
 
@@ -10,23 +10,27 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
+  this.render(hbs`{{register-card}}`);
+
   this.render(hbs`{{wn-footer}}`);
 
   let expectedLines = [
-    'WASTENOT COMPOST',
-    'Ravenswood, Chicago',
-    '(773) 219-2995',
-    'liam@wastenotcompost.com',
-    '© 2016 Wastenot Compost   Website created by AlienCyborg'
+    'Sign Up for More Info',
+    'First Name',
+    'Last Name',
+    'Email Address',
+    'What is your Service Type?',
+    'Residential',
+    'Commercial',
+    'SUBMIT',
+    'GET COMPOSTING ASAP'
   ];
-
-  assert.deepEqual(textLines(this.$()), expectedLines);
 
   // Template block usage:
   this.render(hbs`
-    {{#wn-footer}}
+    {{#register-card}}
       template block text
-    {{/wn-footer}}
+    {{/register-card}}
   `);
 
   assert.deepEqual(textLines(this.$()), expectedLines);

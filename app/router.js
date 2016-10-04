@@ -1,7 +1,9 @@
 import Ember from 'ember';
 import config from './config/environment';
 
-const Router = Ember.Router.extend({
+const { Router: EmberRouter } = Ember;
+
+const Router = EmberRouter.extend({
   location: config.locationType,
   rootURL: config.rootURL
 });
@@ -11,7 +13,6 @@ Router.map(function() {
 
   this.route('about');
   this.route('details', { path: '/details/:user_id' });
-  this.route('form');
   this.route('register');
   this.route('services');
   this.route('thanks');

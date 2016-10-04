@@ -1,17 +1,31 @@
-{{#wn-card
-  onsubmit=attrs.onsubmit
-  title='Admin Login'
-  buttonText='Login'}}
-  <div class="row">
-    {{wn-input
-      classNames='col s12'
-      type='email'
-      label='Username'}}
-  </div>
-  <div class="row">
-    {{wn-input
-      classNames='col s12'
-      type='password'
-      label='Password'}}
-  </div>
-{{/wn-card}}
+{{#md-card title='Login to WasteNot Compost'}}
+  {{#md-card-content}}
+    <div class='row'>
+      {{md-input
+        class    = 'col s12'
+        errors   = (v-get this 'model.email' 'messages')
+        label    = 'Username'
+        type     = 'email'
+        value    = model.email
+        validate = true
+      }}
+    </div>
+    <div class='row'>
+      {{md-input
+        class    = 'col s12'
+        errors   = (v-get this 'model.password' 'messages')
+        label    = 'Password'
+        type     = 'password'
+        value    = model.password
+        validate = true
+      }}
+    </div>
+    {{#md-card-action class='right-align'}}
+      {{md-btn-submit
+        action     = attrs.onsubmit
+        isDisabled = validations.messages.length
+        text       = buttonText
+      }}
+    {{/md-card-action}}
+  {{/md-card-content}}
+{{/md-card}}

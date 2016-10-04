@@ -1,0 +1,93 @@
+{{#md-card title="Resident Details"}}
+  {{#md-card-content}}
+    <div class="row">
+      {{md-input
+        class    = "col s12"
+        errors   = (v-get this "model.phone" "messages")
+        label    = "Phone"
+        type     = "tel"
+        validate = true
+        value    = model.phone
+      }}
+    </div>
+
+    <div class="row">
+      {{md-input
+        class    = "col s12 m6"
+        errors   = (v-get this "model.address.house" "messages")
+        label    = "House number"
+        validate = true
+        value    = model.address.house
+      }}
+      {{md-input
+        class    = "col s12 m6"
+        errors   = (v-get this "model.address.street" "messages")
+        label    = "Street"
+        validate = true
+        value    = model.address.street
+      }}
+      {{md-input
+        class    = "col s12 m6"
+        errors   = (v-get this "model.address.apt" "messages")
+        label    = "Apt/Suite"
+        validate = true
+        value    = model.address.apt
+      }}
+    </div>
+
+    <div class="row">
+      {{md-input
+        class    = "col s12"
+        errors   = (v-get this "model.address.city" "messages")
+        label    = "City"
+        validate = true
+        value    = model.address.city
+      }}
+      {{md-input
+        class    = "col s12 m6"
+        errors   = (v-get this "model.address.state" "messages")
+        label    = "State"
+        validate = true
+        value    = model.address.state
+      }}
+      {{md-input
+        class    = "col s12 m6"
+        errors   = (v-get this "model.address.zip" "messages")
+        label    = "Zip"
+        validate = true
+        value    = model.address.zip
+      }}
+    </div>
+
+    <div class="row">
+      <div class="col s12 m6">
+        <h6>Type of Residence</h6>
+        {{md-checks
+          content         = attrs.residenceTypes
+          optionLabelPath = "name"
+          optionValuePath = "value"
+          selection       = model.details.residenceTypes
+        }}
+      </div>
+
+      <div class="col s12 m6">
+        <h6>Payment Method</h6>
+        {{#md-radios
+          selection=model.details.paymentMethod}}
+          <p>{{md-radio value="cash" name="Cash"}}</p>
+          <p>{{md-radio value="check" name="Check"}}</p>
+        {{/md-radios}}
+      </div>
+    </div>
+
+    {{#md-card-action class="center-align"}}
+      <div class="center-align">
+        {{md-btn-submit
+          action     = attrs.onsubmit
+          isDisabled = validations.messages.length
+          text       = buttonText
+        }}
+      </div>
+    {{/md-card-action}}
+  {{/md-card-content}}
+{{/md-card}}

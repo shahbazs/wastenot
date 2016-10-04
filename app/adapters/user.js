@@ -4,7 +4,7 @@ export default ApplicationAdapter.extend({
   createRecord(store, type, snapshot) {
     let { adapterOptions } = snapshot;
 
-    if ( adapterOptions.action === 'details' ) {
+    if (adapterOptions.action === 'details') {
       return this.updateRecord(...arguments);
     }
 

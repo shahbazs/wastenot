@@ -1,10 +1,14 @@
+// jscs:disable requireCamelCaseOrUpperCaseIdentifiers
+
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+const { Object: EmberObject, Route, run } = Ember;
+
+export default Route.extend({
   model(params) {
     let user = this.store.createRecord('user', { id: params.user_id });
-    let address = Ember.Object.create();
-    let details = Ember.Object.create({
+    let address = EmberObject.create();
+    let details = EmberObject.create({
       residenceTypes: []
     });
 
@@ -26,19 +30,21 @@ export default Ember.Route.extend({
 
   actions: {
     doSubmit() {
-      let model = this.get('currentModel');
-
-      model.save({
-        adapterOptions: { action: 'details' }
-      })
-      .then(() => {
-        this.transitionTo('thanks');
-      })
-      // TODO: show validation errors in the form
-      .catch((err) => {
-        let errors = model.get('errors');
-        console.warn({ err, errors });
-      });
+      run.debounce(this, '_submit', 50);
     }
+  },
+
+  _submit() {
+    this.get('currentModel').save({
+      adapterOptions: { action: 'details' }
+    })
+    .then(() => {
+      this.transitionTo('thanks');
+    })
+    // TODO: show validation errors in the form
+    .catch((err) => {
+      let errors = this.get('currentModel.errors');
+      console.warn({ err, errors });
+    });
   }
 });

@@ -1,8 +1,16 @@
 {{#md-navbar name="WasteNot" homeRoute='home'}}
-  {{li-link target='home' text='Home'}}
-  {{li-link target='about' text='About'}}
-  {{li-link target='services' text='Services'}}
-  {{li-link target='register' text='Sign Up'}}
+  {{#link-to 'home' tagName='li'}}
+    {{link-to 'Home' 'home'}}
+  {{/link-to}}
+  {{#link-to 'about' tagName='li'}}
+    {{link-to 'About' 'about'}}
+  {{/link-to}}
+  {{#link-to 'services' tagName='li'}}
+    {{link-to 'Services' 'services'}}
+  {{/link-to}}
+  {{#link-to 'register' tagName='li'}}
+    {{link-to 'Sign Up' 'register'}}
+  {{/link-to}}
 {{/md-navbar}}
 
 <div class="container">

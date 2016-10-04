@@ -1,13 +1,15 @@
 import DS from 'ember-data';
 
-export default DS.Transform.extend({
+const { Transform } = DS;
+
+export default Transform.extend({
   deserialize(serialized) {
     return serialized;
   },
 
   serialize(deserialized) {
     if (deserialized && deserialized.replace) {
-      return deserialized.replace(/\D/g, "");
+      return deserialized.replace(/\D/g, '');
     }
   }
 });
