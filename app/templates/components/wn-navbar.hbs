@@ -1,14 +1,22 @@
-{{#md-navbar name="WasteNot" homeRoute='index'}}
-  {{#link-to 'index' tagName='li'}}
-    {{link-to 'Home' 'index'}}
+{{#md-navbar name="WasteNot" homeRoute="index"}}
+  {{#link-to "index" tagName="li"}}
+    {{link-to "Home" "index"}}
   {{/link-to}}
-  {{#link-to 'about' tagName='li'}}
-    {{link-to 'About' 'about'}}
+  {{#link-to "about" tagName="li"}}
+    {{link-to "About" "about"}}
   {{/link-to}}
-  {{#link-to 'services' tagName='li'}}
-    {{link-to 'Services' 'services'}}
+  {{#link-to "services" tagName="li"}}
+    {{link-to "Services" "services"}}
   {{/link-to}}
-  {{#link-to 'register' tagName='li'}}
-    {{link-to 'Sign Up' 'register'}}
+  {{#link-to "register" tagName="li"}}
+    {{link-to "Sign Up" "register"}}
   {{/link-to}}
+  {{#if isAdmin}}
+    {{#link-to "admin" tagName="li"}}
+      {{link-to "Admin" "admin"}}
+    {{/link-to}}
+    {{#link-to "admin.users" tagName="li"}}
+      {{link-to "Users" "admin.users"}}
+    {{/link-to}}
+  {{/if}}
 {{/md-navbar}}

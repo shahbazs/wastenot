@@ -17,8 +17,6 @@ export default Route.extend({
     let accessToken = this.get('session')
     .get('session.content.authenticated.access_token');
 
-    console.debug({ accessToken });
-
     return fetch(`${ENV.DS.host}/admin/current`, {
       type: 'GET',
       headers: {
@@ -26,10 +24,8 @@ export default Route.extend({
       }
     })
     .then((raw) => {
-      console.debug({ raw });
       return raw.json().then((admin) => {
         let currentAdmin = this.store.push(admin);
-
         this.set('session.currentAdmin', currentAdmin);
       });
     });

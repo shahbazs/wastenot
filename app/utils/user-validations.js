@@ -27,7 +27,7 @@ export const state = [
   validator('length', { is: 2 }),
   validator('format', {
     regex: /^il$/i,
-    message: 'This field must represent illinois'
+    message: 'This field must represent Illinois'
   })
 ];
 

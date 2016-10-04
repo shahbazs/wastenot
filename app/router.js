@@ -20,7 +20,9 @@ Router.map(function() {
   });
 
   this.route('accepteditems');
-  this.route('admin');
+  this.route('admin', function() {
+    this.route('users');
+  });
 });
 
 export default Router;
