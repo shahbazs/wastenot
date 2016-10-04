@@ -21,6 +21,12 @@ module.exports = function(environment) {
 
     DS: {
       host: process.env.API_HOST || 'http://localhost:4000'
+    },
+
+    'ember-simple-auth': {
+      authenticationRoute: 'auth.login',
+      routeIfAlreadyAuthenticated: 'admin.index',
+      routeAfterAuthentication: 'admin.index'
     }
   };
 
@@ -44,6 +50,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.DS.host = 'http://api.wastenotcompost.com'
   }
 
   return ENV;

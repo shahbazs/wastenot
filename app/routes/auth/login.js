@@ -1,19 +1,24 @@
 import Ember from 'ember';
 
-const { Route, run } = Ember;
+const { Route, inject, run } = Ember;
 
 export default Route.extend({
-  actions: {
-    doLogin() {
-      run.debounce(this, 'login', 50);
-    }
-  },
+  session: inject.service(),
 
   model() {
     return { email: '', password: '' };
   },
 
-  login() {
-    console.log('login');
+  actions: {
+    doLogin() {
+      run.debounce(this, '_login', 50);
+    }
+  },
+
+  _login() {
+    let admin = this.get('currentModel');
+
+    this.get('session')
+    .authenticate('authenticator:wastenot', admin.email, admin.password);
   }
 });

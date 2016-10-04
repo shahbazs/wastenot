@@ -1,20 +1,6 @@
-{{#md-navbar name="WasteNot" homeRoute='home'}}
-  {{#link-to 'home' tagName='li'}}
-    {{link-to 'Home' 'home'}}
-  {{/link-to}}
-  {{#link-to 'about' tagName='li'}}
-    {{link-to 'About' 'about'}}
-  {{/link-to}}
-  {{#link-to 'services' tagName='li'}}
-    {{link-to 'Services' 'services'}}
-  {{/link-to}}
-  {{#link-to 'register' tagName='li'}}
-    {{link-to 'Sign Up' 'register'}}
-  {{/link-to}}
-{{/md-navbar}}
+{{wn-navbar}}
 
 <div class="container">
   {{liquid-outlet}}
   {{wn-footer}}
 </div>
-
