@@ -26,13 +26,14 @@ export const state = [
   validator('presence', true),
   validator('length', { is: 2 }),
   validator('format', {
-    regex: /^[a-zA-Z]{2}$/
+    regex: /^il$/i,
+    message: 'This field must represent illinois'
   })
 ];
 
 export const zip = [
   validator('format', {
-    regex: /^\d{5}(?:[-\s]\d{4})?$/,
+    regex: /^\d{5}(?:[-\s]?\d{4})?$/,
     message: 'This field must be a 5 or 9 digit zip code'
   })
 ];
