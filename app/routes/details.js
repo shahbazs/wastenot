@@ -1,5 +1,3 @@
-// jscs:disable requireCamelCaseOrUpperCaseIdentifiers
-
 import Ember from 'ember';
 
 const { Object: EmberObject, Route, run } = Ember;
