@@ -1,3 +1,4 @@
+/* eslint no-console: ["error", { allow: ["warn"] } ] */
 import Ember from 'ember';
 
 const { Object: EmberObject, Route, run } = Ember;
@@ -14,7 +15,7 @@ export default Route.extend({
     return user;
   },
 
-  setupController(controller/*, model*/) {
+  setupController(controller/* , model*/) {
     this._super(...arguments);
 
     let residenceTypes = [

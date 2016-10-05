@@ -1,3 +1,4 @@
+/* eslint no-console: ["error", { allow: ["warn"] } ] */
 import Ember from 'ember';
 
 const { Route } = Ember;
