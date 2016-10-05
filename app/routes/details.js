@@ -1,9 +1,10 @@
-/* eslint no-console: ["error", { allow: ["warn"] } ] */
 import Ember from 'ember';
 
-const { Object: EmberObject, Route, run } = Ember;
+const { Object: EmberObject, Route, inject, run } = Ember;
 
 export default Route.extend({
+  flashMessages: inject.service(),
+
   model(params) {
     let user = this.store.createRecord('user', { id: params.user_id });
     let address = EmberObject.create();
@@ -40,10 +41,11 @@ export default Route.extend({
     .then(() => {
       this.transitionTo('thanks');
     })
-    // TODO: show validation errors in the form
-    .catch((err) => {
-      let errors = this.get('currentModel.errors');
-      console.warn({ err, errors });
+    .catch((response) => {
+      let { errors } = response;
+      this.get('flashMessages')
+      .danger(errors.mapBy('detail')
+      .join(', '));
     });
   }
 });

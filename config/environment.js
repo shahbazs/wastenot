@@ -1,7 +1,8 @@
+/* eslint-env node */
 module.exports = function(environment) {
-  var ENV = {
+  let ENV = {
     modulePrefix: 'wastenot',
-    environment: environment,
+    environment,
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -24,6 +25,11 @@ module.exports = function(environment) {
       authenticationRoute: 'auth.login',
       routeIfAlreadyAuthenticated: 'admin.index',
       routeAfterAuthentication: 'admin.index'
+    },
+
+    flashMessageDefaults: {
+      timeout: 3000,
+      extendedTimeout: 375
     }
   };
 
@@ -47,7 +53,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.DS.host = 'http://api.wastenotcompost.com'
+    ENV.DS.host = 'http://api.wastenotcompost.com';
   }
 
   return ENV;

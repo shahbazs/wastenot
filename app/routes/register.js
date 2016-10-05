@@ -1,9 +1,10 @@
-/* eslint no-console: ["error", { allow: ["warn"] } ] */
 import Ember from 'ember';
 
-const { Route } = Ember;
+const { Route, inject } = Ember;
 
 export default Route.extend({
+  flashMessages: inject.service(),
+
   model() {
     // residential by default
     return this.store.createRecord('user', {
@@ -26,10 +27,8 @@ export default Route.extend({
           this.transitionTo('details', user);
         }
       })
-      // TODO: show validation errors in the form
-      .catch((err) => {
-        let errors = model.get('errors');
-        console.warn({ err, errors });
+      .catch((response) => {
+        this._doErrors(response);
       });
     },
 
@@ -40,11 +39,16 @@ export default Route.extend({
       .then(() => {
         this.transitionTo('thanks');
       })
-      // TODO: show validation errors in the form
-      .catch((err) => {
-        let errors = this.get('currentModel.errors');
-        console.warn({ err, errors });
+      .catch((response) => {
+        this._doErrors(response);
       });
     }
+  },
+
+  _doErrors(response) {
+    let { errors } = response;
+    this.get('flashMessages')
+    .danger(errors.mapBy('detail')
+    .join(', '));
   }
 });

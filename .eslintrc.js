@@ -11,6 +11,9 @@ module.exports = {
   env: {
     'browser': true
   },
+  globals: {
+  },
   rules: {
+    'max-len': ['error', 80]
   }
 };
