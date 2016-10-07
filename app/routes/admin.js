@@ -17,17 +17,20 @@ export default Route.extend({
     let accessToken = this.get('session')
     .get('session.content.authenticated.access_token');
 
-    return fetch(`${ENV.DS.host}/admin/current`, {
+    return fetch(`${ENV.DS.host}/admins/current`, {
       type: 'GET',
       headers: {
         'Authorization': `Bearer ${accessToken}`
       }
     })
-    .then((raw) => {
-      return raw.json().then((admin) => {
+    .then((response) => {
+      return response.json().then((admin) => {
         let currentAdmin = this.store.push(admin);
         this.set('session.currentAdmin', currentAdmin);
       });
+    })
+    .catch(() => {
+      this.get('session').invalidate();
     });
   }
 });

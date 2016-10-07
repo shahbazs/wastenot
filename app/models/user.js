@@ -10,6 +10,9 @@ export default Model.extend({
   phone: attr('phone'),
   serviceType: attr(),
 
+  insertedAt: attr('date'),
+  updatedAt: attr('date'),
+
   details: attr('hash', {
     defaultValue: () => ({
       residenceTypes: []

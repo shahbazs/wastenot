@@ -12,11 +12,11 @@
     {{link-to "Sign Up" "register"}}
   {{/link-to}}
   {{#if isAdmin}}
-    {{#link-to "admin" tagName="li"}}
-      {{link-to "Admin" "admin"}}
-    {{/link-to}}
-    {{#link-to "admin.users" tagName="li"}}
+    {{#link-to "admin.users" tagName="li" class="restricted"}}
       {{link-to "Users" "admin.users"}}
+    {{/link-to}}
+    {{#link-to "admin.logout" tagName="li" class="restricted"}}
+      {{link-to "Logout" "admin.logout"}}
     {{/link-to}}
   {{/if}}
 {{/md-navbar}}

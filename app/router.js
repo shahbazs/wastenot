@@ -22,6 +22,7 @@ Router.map(function() {
   this.route('accepteditems');
   this.route('admin', function() {
     this.route('users');
+    this.route('logout');
   });
 });
 

@@ -1,0 +1,29 @@
+{{#md-table content=sortedUsers class="bordered responsive-table" as |row|}}
+  {{#md-table-col row=row header="ID"}}
+    {{row.id}}
+  {{/md-table-col}}
+  {{#md-table-col row=row header="Email"}}
+    {{row.email}}
+  {{/md-table-col}}
+  {{#md-table-col row=row header="First"}}
+    {{row.firstName}}
+  {{/md-table-col}}
+  {{#md-table-col row=row header="Last"}}
+    {{row.lastName}}
+  {{/md-table-col}}
+  {{#md-table-col row=row header="Phone"}}
+    {{row.phone}}
+  {{/md-table-col}}
+  {{#md-table-col row=row header="Type"}}
+    {{row.serviceType}}
+  {{/md-table-col}}
+  {{#md-table-col row=row header="Address"}}
+    {{keyValues row.address}}
+  {{/md-table-col}}
+  {{#md-table-col row=row header="Details"}}
+    {{values row.details}}
+  {{/md-table-col}}
+  {{#md-table-col row=row header="Created"}}
+    {{row.insertedAt}}
+  {{/md-table-col}}
+{{/md-table}}

@@ -21,10 +21,6 @@ export default Route.extend({
 
     this.get('session')
     .authenticate('authenticator:wastenot', admin.email, admin.password)
-    .then(() => {
-      // Success
-      this.get('flashMessages').success('Logged in as Admin');
-    })
     .catch((response) => {
       let { errors } = response;
       if (errors.mapBy('code').indexOf(401) >= 0) {

@@ -6,9 +6,5 @@ const { Route } = Ember;
 export default Route.extend({
   model() {
     return this.store.findAll('user');
-  },
-
-  afterModel(model) {
-    console.debug({ model });
   }
 });

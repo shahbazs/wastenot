@@ -15,6 +15,14 @@ body {
 
 nav {
   background-color: $navbar-color;
+
+  li.restricted {
+    background-color: $restricted-color;
+
+    &.active {
+      background-color: $restricted-active-color;
+    }
+  }
 }
 
 footer.page-footer {
