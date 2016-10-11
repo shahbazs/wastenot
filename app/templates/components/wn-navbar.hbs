@@ -1,25 +1,42 @@
-{{#md-navbar name="WasteNot" homeRoute="index"}}
-  {{#link-to "index" tagName="li"}}
-<!--    <img alt="WasteNot Logo"
-       src="assets/images/wastenot_logo_nav_2.jpg" alt="logo"
-       title="Waste Not Compost logo">
--->
+<div class="nav-wrapper">
+  <div class="container">
+    {{#link-to 'index' class="brand-logo"}}
+      <img alt   = "WasteNot Logo"
+           src   = "/assets/images/wastenot_logo_nav.png"
+           title = "Waste Not Compost logo">
     {{/link-to}}
-  {{#link-to "about" tagName="li"}}
-    {{link-to "About" "about"}}
-  {{/link-to}}
-  {{#link-to "services" tagName="li"}}
-    {{link-to "Services" "services"}}
-  {{/link-to}}
-  {{#link-to "register" tagName="li"}}
-    {{link-to "Sign Up" "register"}}
-  {{/link-to}}
+    <ul class="right hide-on-med-and-down">
+      {{#each navLinks as |link|}}
+        {{#link-to link.route tagName="li"}}
+          {{link-to link.text link.route}}
+        {{/link-to}}
+      {{/each}}
+      {{#if isAdmin}}
+        {{#each adminLinks as |link|}}
+          {{#link-to link.route tagName="li"}}
+            {{link-to link.text link.route}}
+          {{/link-to}}
+        {{/each}}
+      {{/if}}
+    </ul>
+  </div>
+
+  <a class="button-collapse" data-activates="{{_sideNavId}}">
+    <i class="material-icons">menu</i>
+  </a>
+</div>
+
+<ul id="{{_sideNavId}}" class="side-nav">
+  {{#each navLinks as |link|}}
+    {{#link-to link.route tagName="li"}}
+      {{link-to link.text link.route}}
+    {{/link-to}}
+  {{/each}}
   {{#if isAdmin}}
-    {{#link-to "admin.users" tagName="li" class="restricted"}}
-      {{link-to "Users" "admin.users"}}
-    {{/link-to}}
-    {{#link-to "admin.logout" tagName="li" class="restricted"}}
-      {{link-to "Logout" "admin.logout"}}
-    {{/link-to}}
+    {{#each adminLinks as |link|}}
+      {{#link-to link.route tagName="li"}}
+        {{link-to link.text link.route}}
+      {{/link-to}}
+    {{/each}}
   {{/if}}
-{{/md-navbar}}
+</ul>
