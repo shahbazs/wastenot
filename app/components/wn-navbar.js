@@ -9,7 +9,7 @@ export default EmberMaterialNavbar.extend({
   isAdmin: computed.notEmpty('session.currentAdmin'),
 
   navLinks: [
-    { text: 'About', route: 'about' },
+    { text: 'About Us', route: 'about' },
     { text: 'Services', route: 'services' },
     { text: 'Register', route: 'register' }
   ],
