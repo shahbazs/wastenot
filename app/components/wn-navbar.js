@@ -11,7 +11,9 @@ export default EmberMaterialNavbar.extend({
   navLinks: [
     { text: 'About Us', route: 'about' },
     { text: 'Services', route: 'services' },
+    { text: 'What we take', route: 'accepteditems'},
     { text: 'Register', route: 'register' }
+
   ],
 
   adminLinks: [
