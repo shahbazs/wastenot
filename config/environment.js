@@ -53,7 +53,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.DS.host = 'http://api.wastenotcompost.com';
+    ENV.DS.host = 'https://api.wastenotcompost.com';
   }
 
   return ENV;
